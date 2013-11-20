@@ -28,6 +28,7 @@ public class MainGui extends JPanel{
         setLayout (new BorderLayout());
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
         splitPane.add(new FileTreePanel());
+//        splitPane.add ()
         add (splitPane);        
     }
     
