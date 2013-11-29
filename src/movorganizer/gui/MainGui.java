@@ -26,6 +26,7 @@ public class MainGui extends JPanel{
     List <Movie> movies;
     MainToolBar mainToolBar;
     PanelBusqueda panelBusqueda;
+    
     public MainGui() {        
         movies = new LinkedList<>();
         setLayout (new BorderLayout());
@@ -40,8 +41,9 @@ public class MainGui extends JPanel{
 
             @Override
             public void valueChanged(ListSelectionEvent e) {
+                
                 int idx = tableMovies.getSelectedRow();
-                new BuscaMovie (panelBusqueda, movies.get(idx));
+                new BuscaMovie (panelBusqueda, movies.get(idx)).execute();
             }
         });
         

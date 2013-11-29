@@ -21,6 +21,8 @@ public class PanelMovie extends JPanel{
     Movie movie;
     
     public PanelMovie(Movie m) {
+        setName (m.toString());
+        System.out.println("Creando panel para pelí: "+m);
         movie = m;
         setBorder(new LineBorder (Color.BLACK, 1, true));
         setLayout (new BoxLayout(this, BoxLayout.Y_AXIS));

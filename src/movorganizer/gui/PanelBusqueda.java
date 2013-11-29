@@ -5,6 +5,7 @@
 package movorganizer.gui;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -17,15 +18,16 @@ public class PanelBusqueda extends JPanel{
 
     private JTextField txtBusca;
     public PanelBusqueda() {        
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new FlowLayout());
         setPreferredSize(new Dimension (300, 500));
         txtBusca = new JTextField (20);        
         add (txtBusca);
     }
     
     public void add (PanelMovie newMovie){
-        add (newMovie);
+        super.add (newMovie);
         revalidate ();
+        repaint ();
     }
 
     public JTextField getTxtBusca() {
