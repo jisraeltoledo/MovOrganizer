@@ -34,7 +34,7 @@ public class MainToolBar extends JToolBar{
                 JFileChooser jfc = new JFileChooser();
                 jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 if (jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
-                    new AddMovies (jfc.getSelectedFile(), main.getMovies()).execute();
+                    new AddMovies (jfc.getSelectedFile(), main).execute();
                 }
             }
         });

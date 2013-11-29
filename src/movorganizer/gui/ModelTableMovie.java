@@ -8,6 +8,7 @@ import db.entities.Movie;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.event.TableModelListener;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -15,7 +16,7 @@ import javax.swing.table.TableModel;
  *
  * @author Hexe
  */
-public class ModelTableMovie extends DefaultTableModel{
+public class ModelTableMovie extends AbstractTableModel{
 
     List <Movie> movies;
 
@@ -25,6 +26,7 @@ public class ModelTableMovie extends DefaultTableModel{
     
     public void add (Movie m){
         movies.add(m);
+        fireTableRowsInserted(movies.size(), movies.size ());
     }
     
     @Override

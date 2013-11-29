@@ -29,6 +29,10 @@ public class Movie {
     public Movie(File f) {
         this.path = f.getPath();
     }
+
+    public Movie() {
+        
+    }
     
     
 

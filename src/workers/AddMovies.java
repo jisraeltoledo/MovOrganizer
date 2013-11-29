@@ -9,6 +9,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Stack;
 import javax.swing.SwingWorker;
+import movorganizer.gui.MainGui;
 import movorganizer.gui.ModelTableMovie;
 
 /**
@@ -18,11 +19,13 @@ import movorganizer.gui.ModelTableMovie;
 public class AddMovies extends SwingWorker<ModelTableMovie, Movie> {
 
     ModelTableMovie model;
+    MainGui gui;
     File dir;
 
-    public AddMovies(File f, ModelTableMovie model) {
-        this.model = model;
+    public AddMovies(File f, MainGui gui) {
+        this.model = gui.getMovies();
         dir = f;
+        this.gui = gui;
     }    
     
     @Override
@@ -51,6 +54,7 @@ public class AddMovies extends SwingWorker<ModelTableMovie, Movie> {
             System.out.println("Añadiendo"+m);
             model.add(m);
         }
+        gui.revalidate();
     }
 
     
